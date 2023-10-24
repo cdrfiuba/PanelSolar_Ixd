@@ -12,6 +12,11 @@ int pinServoAzimutal = 2;
 int pasoServoColatitud = 1;
 int pasoServoAzimutal = 1;
 
+int limiteColatitudSup = 180;
+int limiteColatitudInf = 0;
+
+int limiteAzimutalSup = 180;
+int limiteAzimutalInf = 0;
 
 int sensorSupIzq = A0; 
 int sensorSupDer = A1;
@@ -62,39 +67,39 @@ void loop() {
 }
 
 void subir(int cant){
-  if(colatitud < 180 && colatitud + cant < 180){
+  if(colatitud < limiteColatitudSup && colatitud + cant < limiteColatitudSup){
   colatitud += cant;
   }
-  else if(colatitud < 180){
-  colatitud = 180;
+  else if(colatitud < limiteColatitudSup){
+  colatitud = limiteColatitudSup;
   }
 }
 
 void bajar(int cant){
-  if(colatitud > 0 && colatitud - cant > 0){
+  if(colatitud > limiteColatitudInf && colatitud - cant > limiteColatitudInf){
   colatitud -= cant;
   }
-  else if(colatitud > 0){
-  colatitud = 0;
+  else if(colatitud > limiteColatitudInf){
+  colatitud = limiteColatitudInf;
   }
   
 }
 
 void rotarDerecha(int cant){
-  if(azimutal < 180 && azimutal + cant < 180){
+  if(azimutal < limiteAzimutalSup && azimutal + cant < limiteAzimutalSup){
   azimutal += cant;
   }
-  else if(azimutal < 180){
-  azimutal = 180;
+  else if(azimutal < limiteAzimutalSup){
+  azimutal = limiteAzimutalSup;
   }
 }
 
 void rotarIzquierda(int cant){
-  if(azimutal > 0 && azimutal - cant > 0){
+  if(azimutal > limiteAzimutalInf && azimutal - cant > limiteAzimutalInf){
   azimutal -= cant;
   }
-  else if(azimutal > 0){
-  azimutal = 0;
+  else if(azimutal > limiteAzimutalInf){
+  azimutal = limiteAzimutalInf;
   }
 }
 

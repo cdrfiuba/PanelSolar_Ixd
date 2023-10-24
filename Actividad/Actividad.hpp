@@ -7,6 +7,12 @@ Servo ServoAzimutal;
 int colatitud = 90;
 int azimutal = 90;
 
+int limiteColatitudSup = 180;
+int limiteColatitudInf = 0;
+
+int limiteAzimutalSup = 180;
+int limiteAzimutalInf = 0;
+
 int pinServoColatitud = 1;
 int pinServoAzimutal = 2;
 
@@ -22,31 +28,31 @@ int LimiteSensorInfIzq = 100;
 int LimiteSensorInfDer = 100;
 
 void subir(){
-  if(colatitud < 180){
+  if(colatitud < limiteColatitudSup){
   colatitud +=1;
   }
   ServoColatitud.write(colatitud); 
   ServoColatitud.write(azimutal);
 }
 
-void bajar(int cant){
-  if(colatitud > 0){
+void bajar(){
+  if(colatitud > limiteColatitudInf){
   colatitud -=1;
   }
   ServoColatitud.write(colatitud); 
   ServoColatitud.write(azimutal);
 }
 
-void rotarDerecha(int cant){
-  if(azimutal < 180){
+void rotarDerecha(){
+  if(azimutal < limiteAzimutalSup){
   azimutal += 1;
   }
   ServoColatitud.write(colatitud); 
   ServoColatitud.write(azimutal);
 }
 
-void rotarIzquierda(int cant){
-  if(azimutal > 0){
+void rotarIzquierda(){
+  if(azimutal > limiteAzimutalInf){
   azimutal -= 1;
   }
   ServoColatitud.write(colatitud); 
