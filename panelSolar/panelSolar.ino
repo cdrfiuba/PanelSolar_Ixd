@@ -6,8 +6,8 @@ Servo ServoAzimutal;
 int colatitud = 90; //sube baja
 int azimutal = 90; //derecha izquierda
 
-int pinServoColatitud = 1;
-int pinServoAzimutal = 2;
+int pinServoColatitud = 10;
+int pinServoAzimutal = 11;
 
 int pasoServoColatitud = 1;
 int pasoServoAzimutal = 1;
@@ -18,10 +18,10 @@ int limiteColatitudInf = 0;
 int limiteAzimutalSup = 180;
 int limiteAzimutalInf = 0;
 
-int sensorSupIzq = A0; 
-int sensorSupDer = A1;
-int sensorInfIzq = A2;
-int sensorInfDer = A3;
+int sensorSupIzq = A1; 
+int sensorSupDer = A2;
+int sensorInfIzq = A3;
+int sensorInfDer = A4;
 
 //A partir de este valor se considera que el sensor "lee"
 int LimiteSensorSupIzq = 100;
