@@ -3,10 +3,10 @@
 
 
 void setup() {
-  pinMode(sensorSupIzq, INPUT);
-  pinMode(sensorSupDer, INPUT);
-  pinMode(sensorInfDer, INPUT);
-  pinMode(sensorInfIzq, INPUT);
+  pinMode(pinSensorSupIzq, INPUT);
+  pinMode(pinSensorSupDer, INPUT);
+  pinMode(pinSensorInfDer, INPUT);
+  pinMode(pinSensorInfIzq, INPUT);
 
   pinMode(pinServoColatitud, OUTPUT);
   pinMode(pinServoAzimutal, OUTPUT);

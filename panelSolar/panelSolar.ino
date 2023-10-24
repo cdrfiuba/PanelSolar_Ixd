@@ -18,10 +18,10 @@ int limiteColatitudInf = 0;
 int limiteAzimutalSup = 180;
 int limiteAzimutalInf = 0;
 
-int sensorSupIzq = A1; 
-int sensorSupDer = A2;
-int sensorInfIzq = A3;
-int sensorInfDer = A4;
+int pinSensorSupIzq = A1; 
+int pinSensorSupDer = A2;
+int pinSensorInfIzq = A3;
+int pinSensorInfDer = A4;
 
 //A partir de este valor se considera que el sensor "lee"
 int LimiteSensorSupIzq = 100;
@@ -30,10 +30,10 @@ int LimiteSensorInfIzq = 100;
 int LimiteSensorInfDer = 100;
 
 void setup() {
-  pinMode(sensorSupIzq, INPUT);
-  pinMode(sensorSupDer, INPUT);
-  pinMode(sensorInfDer, INPUT);
-  pinMode(sensorInfIzq, INPUT);
+  pinMode(pinSensorSupIzq, INPUT);
+  pinMode(pinSensorSupDer, INPUT);
+  pinMode(pinSensorInfDer, INPUT);
+  pinMode(pinSensorInfIzq, INPUT);
 
   pinMode(pinServoColatitud, OUTPUT);
   pinMode(pinServoAzimutal, OUTPUT);
@@ -104,28 +104,28 @@ void rotarIzquierda(int cant){
 }
 
 bool leeSensorSupIzq(){
-  int val = analogRead(sensorSupIzq);
+  int val = analogRead(pinSensorSupIzq);
   
   if(val > LimiteSensorSupIzq) return true;
   else return false;
 }
 
 bool leeSensorSupDer(){
-  int val = analogRead(sensorSupDer);
+  int val = analogRead(pinSensorSupDer);
   
   if(val > LimiteSensorSupDer) return true;
   else return false;
 }
 
 bool leeSensorInfIzq(){
-  int val = analogRead(sensorInfIzq);
+  int val = analogRead(pinSensorInfIzq);
   
   if(val > LimiteSensorInfIzq) return true;
   else return false;
 }
 
 bool leeSensorInfDer(){
-  int val = analogRead(sensorInfDer);
+  int val = analogRead(pinSensorInfDer);
   
   if(val > LimiteSensorInfDer) return true;
   else return false;
