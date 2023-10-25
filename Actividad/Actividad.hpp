@@ -27,7 +27,7 @@ int LimiteSensorSupDer = 100;
 int LimiteSensorInfIzq = 100;
 int LimiteSensorInfDer = 100;
 
-void subir(){
+void subirPanel(){
   if(colatitud < limiteColatitudSup){
   colatitud +=1;
   }
@@ -35,7 +35,7 @@ void subir(){
   ServoColatitud.write(azimutal);
 }
 
-void bajar(){
+void bajarPanel(){
   if(colatitud > limiteColatitudInf){
   colatitud -=1;
   }
@@ -43,7 +43,7 @@ void bajar(){
   ServoColatitud.write(azimutal);
 }
 
-void rotarDerecha(){
+void rotarPanelDerecha(){
   if(azimutal < limiteAzimutalSup){
   azimutal += 1;
   }
@@ -51,7 +51,7 @@ void rotarDerecha(){
   ServoColatitud.write(azimutal);
 }
 
-void rotarIzquierda(){
+void rotarPanelIzquierda(){
   if(azimutal > limiteAzimutalInf){
   azimutal -= 1;
   }
